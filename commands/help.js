@@ -1,15 +1,27 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports = {
-    name: 'help',
-    description: "Commands List",
-    execute(message, args){
-        message.channel.send('What do you need help with?');
- 
+  name: "help",
+  aliases: ["h"],
+  description: "Display all commands and descriptions",
+  execute(message) {
+    let commands = message.client.commands.array();
 
-    if (receivedMessage.content.includes(client.user.toString())) {
-        const args = message.content.slice(prefix.length).split(/ +/);
-        const command = args.shift().toLowerCase();
-    receivedMessage.channel.send("You need help with" + ":" + receivedMessage.content.args)}
+    let helpEmbed = new MessageEmbed()
+      .setTitle("PocketBot Commands")
+      .setDescription("List of all commands")
+      .setColor("#F8AA2A");
 
- 
-    }
-}
+    commands.forEach((cmd) => {
+      helpEmbed.addField(
+        `**${message.client.prefix}${cmd.name} ${cmd.aliases ? `(${cmd.aliases})` : ""}**`,
+        `${cmd.description}`,
+        true
+      );
+    });
+
+    helpEmbed.setTimestamp();
+
+    return message.channel.send(helpEmbed).catch(console.error);
+  }
+};
