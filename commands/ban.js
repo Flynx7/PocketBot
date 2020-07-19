@@ -4,7 +4,9 @@ module.exports = {
     name: 'ban',
     description: "Ban people For rule breach.",
     execute(message, args){
-        guild.client.role.cache.get()
-        message.reply('User Was Successfully Banned');
+        if (guild.client.role.cache.get() !== ('732244276557250621')
+        )message.reply(message.author.tag + ',' + 'you do not have permission to do that!');
+        else if(guild.client.role.cache.get() == ('732244276557250621')
+        )message.reply(message.author.tag + ',' + user.mention + 'has been banned.');
     }
 }
