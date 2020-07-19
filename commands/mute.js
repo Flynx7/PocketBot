@@ -10,4 +10,3 @@ module.exports = {
         )message.reply(message.author.tag + ',' + user.mention + 'has been muted.');
     }
 }
-e
