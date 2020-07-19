@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
  
-const prefix = '&';
+const prefix = ('&');
  
 const fs = require('fs');
  
@@ -16,7 +16,7 @@ for(const file of commandFiles){
  
  
 client.once('ready', () => {
-    client.user.setActivity("Minecraft | Type &help For Commands List");
+    client.user.setActivity("Type &help For Commands List");
     console.log('PocketBot is online!');
 });
 
