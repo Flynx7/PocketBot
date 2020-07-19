@@ -1,4 +1,4 @@
-const { canModifyQueue } = require("../util/PocketBotUtli");
+const { canModifyQueue } = require("../util/PocketBotUtil");
 
 module.exports = {
   name: "pause",
