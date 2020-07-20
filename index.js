@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
  
-const prefix = '&'
+const prefix = '$'
  
 const fs = require('fs');
  
@@ -66,8 +66,6 @@ client.on('message', message =>{
         client.commands.get('stop').execute(message, args);
     } else if (command === 'volume'){
         client.commands.get('volume').execute(message, args);
-    } else if (command === 'ban'){
-        client.commands.get('ban').execute(message, args);
     }
 });
  
