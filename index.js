@@ -67,6 +67,8 @@ client.on('message', message =>{
         client.commands.get('stop').execute(message, args);
     } else if (command === 'volume'){
         client.commands.get('volume').execute(message, args);
+    } else if (command === 'invite'){
+        client.commands.get('invite').execute(message, args);
     }
 });
  
